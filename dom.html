@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script>
+        function add() {
+            var para = document.createElement("li");
+            para.innerHTML = document.getElementById("in").value;
+            root.appendChild(para);
+        }
+
+        function del() {
+            var para = document.createElement("root");
+            if (root.hasChildNodes()) {
+                root.removeChild(root.firstChild)
+            }
+        }
+
+        function ShowTime() {
+            var dt = new Date();
+            document.write(dt.toTimeString());
+            var dv = document.getElementById("myDiv");
+            dv.innerHTML = dt.toTimeString();
+
+        }
+        ShowTime();
+
+    </script>
+</head>
+
+<body onload="myFunction()">
+    <p id="demo"></p>
+
+    <script>
+        function myFunction() {
+            var d = new Date();
+            document.getElementById("demo").innerHTML = "今天是" + (d.getMonth() + 1) + "月" + d.getDate() + "日星期" + d.getDay() + "<br>";
+            document.getElementById("demo").innerHTML += d.getHours() + "時" + d.getSeconds() + "秒";
+            setInterval(myFunction, 1000);
+        }
+
+    </script>
+    <div id=ShowTime()></div>
+    <input type="text" id="in">
+    <button onclick="add()">新增</button><br>
+    <button onclick="del()">完成</button><br>
+    <button onclick="ShowTime()">時間</button><br>
+    <p>工作項目</p>
+    <ol id="root"></ol>
+</body>
+
+</html>
